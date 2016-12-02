@@ -7,7 +7,7 @@ public class Dealer extends Computer {
     Deck deck = new Deck();
 
     public Dealer() {
-        super(new DealerIntellect());
+        super("Dealer", new DealerIntellect(), new HalfBetter(), 0);
     }
 
     public void deal(Player player) {

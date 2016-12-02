@@ -6,29 +6,15 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Player> players = new LinkedList<>();
-        players.add(new Computer(new LimitIntellect(14)));
-        players.add(new Computer(new LimitIntellect(20)));
-        players.add(new Human(new ConsoleIntellect()));
-        Dealer dealer = new Dealer();
-        players.add(dealer);
+        String[] names = {"Евгений"};
+        Table table = new Table(2, names);
 
-        for(Player player : players){
-            dealer.deal(player);
-            dealer.deal(player);
-            System.out.println(player.hand);
-        }
+        table.betting();
+        table.deal();
+        table.play();
+        table.results();
 
-        for(Player player: players){
-            while(true){
-                System.out.println(player.hand.getScore()+ ": ");
-                Command command = player.decision();
-                System.out.println(command);
-                if(command==Command.STAND)
-                    break;
-                if(command==Command.HIT)
-                    dealer.deal(player);
-            }
+
         }
     }
-}
+

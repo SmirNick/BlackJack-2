@@ -19,3 +19,4 @@ public class LimitIntellect extends Intellect{
             return Command.STAND;
     }
 }
+
